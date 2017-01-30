@@ -1,0 +1,51 @@
+select name,dept_name from student1;
+
+select name from instructor where dept_name='Comp. Sci.';
+
+select title from course where dept_name='Comp. Sci.'and credits='3';
+
+select course.course_id,course.title,student.ID from course,student where student.ID='00128';
+
+select name from instructor where salary between 40000 and 50000;
+
+
+update advisor set i_id=1001 where s_id between 100 and 200;
+
+update instructor set dept_name='CSE' where dept_name='IT';
+
+update instructor set salary=1.05*salary;
+
+
+     delete from department where dept_name='IT';
+
+delete from prereq where course_id='101';
+
+delete from course where course_id not in (select course_id from teaches);
+
+
+
+alter table student add(DOB date);
+
+alter table department modify(dept_name varchar(20));
+
+alter table student drop column DOB;
+
+
+select name,ID from instructor where ID not in (select ID from teaches);
+
+     select student1.name,course.name,year,room_number from student1,course,section,classroom where room_number=514;
+
+
+
+select name,takes.course_id,title as c_name from student1,takes,course where student1.ID=takes.ID and year=2009 and takes.course_id = course.course_id;
+ 
+     select name,salary as S from instructor where S>
+
+
+
+select name from instructor where dept_name like '%Co%';
+
+select p.course_id, p1.title, p2.title from prereq p, course p1, course p2 where p.course_id=p1.course_id and p.prereq_id=p2.course_id order by p.course_id, p.prereq_id;
+
+
+
